@@ -7,9 +7,26 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
-    <form action="verify-captcha.php" method="POST">
-        <div class="g-recaptcha" data-sitekey="6Lf-CnopAAAAANhujllCvj1NIHpW5bem7Xvkp4_1"></div>
+    <form id="captcha-form" action="verify-captcha.php" method="POST">
+        <!-- Loop to display 100 reCAPTCHA instances -->
+        <div id="captcha-container"></div>
         <button type="submit">Submit</button>
     </form>
+
+    <script>
+        // Function to add reCAPTCHA instances dynamically
+        function addRecaptchaInstances() {
+            var container = document.getElementById("captcha-container");
+            for (var i = 0; i < 100; i++) {
+                var recaptchaDiv = document.createElement("div");
+                recaptchaDiv.className = "g-recaptcha";
+                recaptchaDiv.setAttribute("data-sitekey", "6Lf-CnopAAAAANhujllCvj1NIHpW5bem7Xvkp4_1");
+                container.appendChild(recaptchaDiv);
+            }
+        }
+
+        // Call the function to add reCAPTCHA instances when the page loads
+        window.onload = addRecaptchaInstances;
+    </script>
 </body>
 </html>
