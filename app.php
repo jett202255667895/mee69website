@@ -1,5 +1,5 @@
 <?php
-$recaptcha_secret = "6Lcu43cpAAAAAOD__vcJEJbqXuc5wTtiQlL3C6oR";
+$recaptcha_secret = "6Lf-CnopAAAAAJPMsgXxvbZ9AcZODyAbsJ3BPIK2";
 $recaptcha_response = $_POST['g-recaptcha-response'];
 
 $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$recaptcha_secret&response=$recaptcha_response");
